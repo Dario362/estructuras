@@ -590,7 +590,12 @@ public class Discotienda
      */
     public String metodo1( )
     {
-        return "respuesta 1";
+        try {
+            generarInformeDiscos();
+            return "registro exitoso";
+        } catch (Exception e) {
+            return "fallo"+e.getMessage();
+        }
     }
 
     /**
@@ -599,7 +604,11 @@ public class Discotienda
      */
     public String metodo2( )
     {
-    	return "respuesta 2";
+    	try {
+            return generarInformeDiscosEconomicos();
+        } catch (Exception e) {
+            return "invalido "+e.getMessage();
+        }
     }
 
     /**
